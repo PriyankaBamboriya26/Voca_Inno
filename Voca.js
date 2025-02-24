@@ -38,6 +38,12 @@ recognition.onresult=function(event){
         console.log(transcript);
         window.open("https://www.youtube.com/");
     }
+
+    if(transcript.includes("open google")){
+        readOut("Opening google sir");
+        console.log(transcript);
+        window.open("https://www.google.com/");
+    }
     
 
 }
