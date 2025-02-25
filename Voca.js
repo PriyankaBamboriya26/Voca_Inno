@@ -130,5 +130,6 @@ speekbtn.addEventListener("click" ,()=>{
 window.onload=function(){
     readOut("  ");
     readOut("Activating Voca");
+    
     recognition.start();
 }
