@@ -89,12 +89,13 @@ recognition.onresult=function(event){
     }
 
     //clicking button by speech.
-    /*var stopbtn=document.getElementById("end");
+    var stopbtn=document.getElementById("end");
     if(transcript.includes("stop")){
         //readOut("Opening mails sir");
         //console.log(transcript);
+        readOut("Deactivating Voca");
         stopbtn.click();
-    }*/
+    }
     
 
 }
@@ -128,4 +129,6 @@ speekbtn.addEventListener("click" ,()=>{
 });
 window.onload=function(){
     readOut("  ");
+    readOut("Activating Voca");
+    recognition.start();
 }
