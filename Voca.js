@@ -77,22 +77,35 @@ recognition.onresult=function(event){
 
     //scrolling
     if(transcript.includes("scroll up")){
-        //readOut("Opening mails sir");
-        //console.log(transcript);
         window.scrollBy(0,200);
     }
 
     if(transcript.includes("scroll down")){
-        //readOut("Opening mails sir");
-        //console.log(transcript);
         window.scrollBy(0,-200);
+    }
+
+    //time
+    if(transcript.includes("what's the time")){
+        let data=new Date();
+        let hrs = data.getHours();
+        let min= data.getMinutes();
+        let sec=data.getSeconds();
+        readOut("the time is"+hrs+"past"+min+"minutes");
+    }
+
+    //date
+    if(transcript.includes("what's the date")){
+        let data=new Date();
+        let date=data.getDate();
+        let month=data.getMonth();
+        const mon=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        let year=data.getFullYear();
+        readOut("the date is"+date+mon[month]+year);
     }
 
     //clicking button by speech.
     var stopbtn=document.getElementById("end");
     if(transcript.includes("stop")){
-        //readOut("Opening mails sir");
-        //console.log(transcript);
         readOut("Deactivating Voca");
         stopbtn.click();
     }
